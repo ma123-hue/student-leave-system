@@ -1,0 +1,10 @@
+target/
+.idea/
+.vscode/
+*.log
+springboot*.log
+server*.log
+*.class
+*.jar
+*.war
+.mvn/wrapper/maven-wrapper.jar

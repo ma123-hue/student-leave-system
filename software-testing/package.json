@@ -1,0 +1,16 @@
+{
+  "name": "student-leave-system-qa",
+  "version": "1.0.0",
+  "private": true,
+  "description": "学生请销假系统接口与 UI 自动化测试工程",
+  "scripts": {
+    "test": "playwright test",
+    "test:api": "playwright test tests/api",
+    "test:ui": "playwright test tests/ui",
+    "test:headed": "playwright test tests/ui --headed",
+    "report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.1"
+  }
+}

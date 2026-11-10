@@ -1,0 +1,32 @@
+# Dependencies and build outputs
+node_modules/
+dist/
+target/
+.gradle/
+**/build/
+playwright-report/
+test-results/
+artifacts/
+
+# IDE and OS files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.iml
+
+# Local settings and logs
+.env
+.env.*
+!.env.example
+local.properties
+*.log
+
+# Sensitive or generated data
+*.sql.bak
+*backup*.sql
+backend/student_leave_system_full.sql
+frontend/public/vue/
+*.xlsx
+*.xls
+
