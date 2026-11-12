@@ -1,8 +1,10 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 
+const demoMode = process.env.VITE_DEMO_MODE === 'true';
+
 export default defineConfig({
-  base: '/',
+  base: demoMode ? './' : '/',
   plugins: [vue()],
   build: {
     outDir: 'dist',

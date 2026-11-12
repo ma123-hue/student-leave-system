@@ -1,3 +1,5 @@
+import { mockRequest } from './mock';
+
 const DEFAULT_HEADERS = {
   'Content-Type': 'application/json; charset=utf-8'
 };
@@ -22,6 +24,11 @@ function buildUrl(url, params) {
 
 export async function request(url, options = {}) {
   const { params, body, headers, ...fetchOptions } = options;
+
+  if (import.meta.env.VITE_DEMO_MODE === 'true') {
+    return mockRequest(url, { params, body, headers, ...fetchOptions });
+  }
+
   let response;
 
   try {

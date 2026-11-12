@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router';
 import StudentView from '../views/StudentView.vue';
 import AdminView from '../views/AdminView.vue';
 import LoginView from '../views/LoginView.vue';
@@ -7,7 +7,9 @@ import AdminLoginView from '../views/AdminLoginView.vue';
 import { adminApi } from '../api';
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: import.meta.env.VITE_DEMO_MODE === 'true'
+    ? createWebHashHistory(import.meta.env.BASE_URL)
+    : createWebHistory(import.meta.env.BASE_URL),
   routes: [
     { path: '/', redirect: '/student' },
     { path: '/student/login', component: LoginView },
